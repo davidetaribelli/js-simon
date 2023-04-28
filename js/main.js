@@ -1,12 +1,6 @@
-// generare 5 numeri e stamparli in pagina
 
-// far partire un timer di 30 sec
-
-// dopo i 30 sec i numeri scompaiono
-
-// tramite prompt l'utente dovrà inserire i numeri visti uno alla volta
-
-// infine il software deve dire quanti numeri sono  stati indovinati
+// infine il software deve dire quanti numeri sono stati indovinati
+// prendere i numeri scritti dall'utente e confrontarli con i numeri generati in precedenza
 
 //FUNZIONI
 
@@ -27,12 +21,39 @@ function genNum (quantita){
     return numbers;
 }
 
+
+//funzione che nasconde i numeri
+function hideNum(){
+    numeriEl.innerHTML = "";
+}
+
+// funzione che genera i prompt
+function inputUtente(){
+    for(let i = 0; i < 5; i++){
+        let numUtente = parseInt(prompt("Inserisci i numeri che ricordi uno alla volta"));
+        if (isNaN(numUtente)){
+            alert("devi inserire un numero");
+        }
+    
+    }
+}
+
+// VARIABILI
+
 // dichiaro le mie variabili
 const numeriEl = document.querySelector(".numeri");
-
 let num = genNum("5")
+
+// DOM
+
+//creo un paragrafo dove stampo i numeri e lo aggiungo al suo contenitore
 let printNum = document.createElement("p");
 printNum.innerHTML = num;
 numeriEl.appendChild(printNum);
-console.log(num);
+
+// dopo 30 secondi i numeri scompaiono grazie alla funzione dichiarata in precedenza
+setTimeout(hideNum, 30 * 1000);
+// dopo 32 secondi appaiono i prompt
+setTimeout(inputUtente, 31 * 1000);
+
 

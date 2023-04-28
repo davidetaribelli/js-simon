@@ -12,10 +12,15 @@ main{
 }
 
 .numeri{
+    width: 600px;
+    height: 300px;
     border: 10px solid green;
     padding: 2em;
     border-radius: 1em;
     background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .numeri p{
