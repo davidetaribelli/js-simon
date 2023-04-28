@@ -30,6 +30,9 @@ function genNum (quantita){
 // dichiaro le mie variabili
 const numeriEl = document.querySelector(".numeri");
 
-let num = genNum(5)
+let num = genNum("5")
+let printNum = document.createElement("p");
+printNum.innerHTML = num;
+numeriEl.appendChild(printNum);
 console.log(num);
 
